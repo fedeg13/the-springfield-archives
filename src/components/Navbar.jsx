@@ -1,16 +1,24 @@
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ theme, toggleTheme }) {
   return (
     <header className="navbar">
       <Link to="/" className="navbar-brand">
         <span className="navbar-logo-icon">🍩</span>
-        <h1 className="navbar-title">The Springfield <span>Archives</span></h1>
+        {/* "The" en blanco/normal, "Springfield" en amarillo, "Archives" en blanco/normal */}
+        <h1 className="navbar-title">
+          The <span>Springfield</span> Archives
+        </h1>
       </Link>
-      <nav className="navbar-links">
-        <Link to="/" className="nav-link">Characters</Link>
-        <Link to="/contacto" className="nav-link">Suggest Character</Link>
-      </nav>
+      <div className="navbar-actions">
+        <nav className="navbar-links">
+          <Link to="/" className="nav-link">Characters</Link>
+          <Link to="/contacto" className="nav-link">Suggest Character</Link>
+        </nav>
+        <button className="theme-toggle-btn" onClick={toggleTheme} title="Toggle theme">
+          {theme === 'dark' ? '☀️ Light' : '🌑 Dark'}
+        </button>
+      </div>
     </header>
   );
 }
