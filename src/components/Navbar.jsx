@@ -10,20 +10,20 @@ function Navbar({ theme, toggleTheme }) {
       <div className="navbar-actions">
         <nav className="navbar-links">
           <NavLink to="/characters" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-            Characters
+            👤 Characters
           </NavLink>
           <NavLink to="/episodes" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-            Episodes
+            📺 Episodes
           </NavLink>
           <NavLink to="/locations" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-            Locations
+            📍 Locations
           </NavLink>
           <NavLink to="/Form" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-            Suggest
+            ✏️ Suggest
           </NavLink>
         </nav>
         <button className="theme-toggle-btn" onClick={toggleTheme} title="Toggle theme">
-          {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
+          {theme === 'dark' ? '☀️ Light Theme' : '🌙 Dark Theme'}
         </button>
       </div>
     </header>

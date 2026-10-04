@@ -21,14 +21,19 @@
   --bg-secondary: rgba(226, 232, 240, 0.85);
   --bg-card: rgba(255, 255, 255, 0.88);
   --bg-card-hover: rgba(241, 245, 249, 0.96);
-  --accent-yellow: #d97706;
-  --accent-glow: rgba(217, 119, 6, 0.15);
+  
+  /* Amarillo Dorado / Mostaza Simpsons (en lugar de naranja) */
+  --accent-yellow: #d9a006; 
+  --accent-glow: rgba(217, 160, 6, 0.2);
+  
   --text-primary: #0f172a;
   --text-secondary: #334155;
   --text-muted: #64748b;
   --border-color: rgba(0, 0, 0, 0.12);
-  --border-highlight: rgba(217, 119, 6, 0.35);
+  --border-highlight: rgba(217, 160, 6, 0.4);
 }
+
+
 
 * {
   box-sizing: border-box;
@@ -262,6 +267,41 @@ body::before {
   transform: translateY(-50%);
   color: var(--text-muted);
   font-size: 1.1rem;
+  z-index: 2; /* 👈 Hace que aparezca por encima del fondo del input */
+  pointer-events: none; /* 👈 Permite hacer clic a través del icono hacia el input */
+}
+
+/* --- BÚSQUEDA GLOBAL --- */
+.search-results-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.results-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.group-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-yellow);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.search-status-msg {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  padding: 2.5rem 1rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
 }
 
 /* --- CARDS GRID Y DISPOSICIÓN CENTRADA --- */
