@@ -91,7 +91,7 @@ function SimpsonCard({ personaje }) {
 
           {currentPhrase !== 'N/A' && (
             <div className="phrase-box">
-              <span className="info-label">Famous Quote</span>
+              <span className="info-label">Famous Quotes</span>
               <div className="phrase-carousel">
                 {phrasesList.length > 1 && (
                   <button 

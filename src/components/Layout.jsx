@@ -4,10 +4,13 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 function Layout() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
@@ -17,7 +20,7 @@ function Layout() {
   return (
     <div className="app-container">
       <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <main>
+      <main style={{ flex: 1 }}>
         <Outlet />
       </main>
       <Footer />

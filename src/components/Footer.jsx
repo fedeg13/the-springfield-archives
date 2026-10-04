@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="footer">
-      <p>© 2026 The Springfield Archives • Final Project for UTN Frontend React Course</p>
+      <p>© 2026 The Springfield Archives • TP Final - Federico Gimenez</p>
     </footer>
   );
 }

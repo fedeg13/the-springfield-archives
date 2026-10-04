@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Contacto() {
+function Form() {
   const [form, setForm] = useState({ name: '', email: '', suggestedCharacter: '', details: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -22,10 +22,10 @@ function Contacto() {
   return (
     <div className="page-container">
       <section className="hero-header">
-        <span className="hero-badge">Archives Network</span>
-        <h2 className="hero-title">Suggest a Character</h2>
+        <span className="hero-badge">Your suggestions</span>
+        <h2 className="hero-title">Something missing?</h2>
         <p className="hero-subtitle">
-          Is an inhabitant missing from our Springfield index? Submit a proposal to add them to the database.
+          Submit a proposal to add a character, episode or location to our database.
         </p>
       </section>
 
@@ -35,7 +35,7 @@ function Contacto() {
             <span className="alert-icon">✨</span>
             <div>
               <strong>Proposal Received!</strong>
-              <p>Thank you. Your character suggestion has been logged into the archives system.</p>
+              <p>Thank you. Your suggestion has been logged into the archives system.</p>
             </div>
           </div>
         )}
@@ -56,7 +56,7 @@ function Contacto() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Your Email Address</label>
             <input
               id="email"
               type="email"
@@ -70,13 +70,13 @@ function Contacto() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="suggestedCharacter">Character Name</label>
+            <label htmlFor="suggestedCharacter">Character, Episode or Location Name</label>
             <input
               id="suggestedCharacter"
               type="text"
               name="suggestedCharacter"
               className="form-input"
-              placeholder="e.g. Disco Stu, Frank Grimes, Hank Scorpio..."
+              placeholder="e.g. Disco Stu, Bart Gets Hit by a Car, Flanders' House..."
               value={form.suggestedCharacter}
               onChange={handleChange}
               required
@@ -84,7 +84,7 @@ function Contacto() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="details">Occupation or Famous Quote</label>
+            <label htmlFor="details">Character, Episode or Location Information</label>
             <textarea
               id="details"
               name="details"
@@ -97,7 +97,7 @@ function Contacto() {
           </div>
 
           <button type="submit" className="submit-btn">
-            Submit Character Proposal
+            Submit
           </button>
         </form>
       </div>
@@ -105,4 +105,4 @@ function Contacto() {
   );
 }
 
-export default Contacto;
+export default Form;
