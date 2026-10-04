@@ -3,6 +3,8 @@
 
 **The Springfield Archives** is an interactive web application designed to explore *The Simpsons* database in real time using the public [The Simpsons API](https://thesimpsonsapi.com/).
 
+🌐 **Live Demo:** [https://the-springfield-archives.vercel.app](https://the-springfield-archives.vercel.app)
+
 ---
 
 ## 🚀 Features
