@@ -1,16 +1,16 @@
 
 # 🍩 The Springfield Archives
 
-**The Springfield Archives** is a modern, interactive web application designed to explore *The Simpsons* character database in real time using the public [The Simpsons API](https://thesimpsonsapi.com/).
+**The Springfield Archives** is an interactive web application designed to explore *The Simpsons* database in real time using the public [The Simpsons API](https://thesimpsonsapi.com/).
 
 ---
 
 ## 🚀 Features
 
-- 🔍 **Real-Time Search:** Filter characters instantly by name or occupation.
+- 🔍 **Real-Time Search:** Filter characters, episodes and locations instantly by name or description.
 - 🖼️️ **High-Quality Imagery:** Seamless integration with The Simpsons API CDN (`cdn.thesimpsonsapi.com/500/`).
-- 📝 **Character Suggestions:** Interactive form with state management to propose new Springfield residents.
-- 🎨 **Modern Design:** Dark mode UI with vibrant accents, responsive cards, smooth hover effects, and clean typography.
+- 📝 **Suggestions:** Interactive form with state management to propose new Springfield data.
+- 🎨 **Modern Design:** Dark and light mthemes with vibrant accents, responsive cards, smooth hover effects, and clean typography.
 - 🧭 **Client-Side Routing:** Powered by React Router DOM with a custom 404 error page.
 
 ---
@@ -55,5 +55,4 @@ To run this project locally on your machine, follow these steps:
 
 ## 📄 License
 
-This project is open-source. Character data and images belong to their respective creators and [The Simpsons API](https://thesimpsonsapi.com/).
-```
+This project is open-source. Data and images belong to their respective creators and [The Simpsons API](https://thesimpsonsapi.com/).
