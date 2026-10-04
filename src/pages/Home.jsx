@@ -8,7 +8,7 @@ function Home() {
   const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Cargar datos de la API al montar el componente
+
   useEffect(() => {
     const fetchAllData = async () => {
       try {
@@ -38,7 +38,7 @@ function Home() {
 
   const query = searchQuery.trim().toLowerCase();
 
-  // Filtrado dinámico por categoría
+
   const filteredCharacters = query
     ? characters.filter((c) =>
         c.name?.toLowerCase().includes(query) ||
@@ -67,7 +67,7 @@ function Home() {
 
   return (
     <div className="page-container">
-      {/* HERO / BUSCADOR */}
+      
       <div className="hero-header">
 
         <h2 className="hero-title">
@@ -95,18 +95,18 @@ function Home() {
         </div>
       </div>
 
-      {/* RESULTADOS DE BÚSQUEDA: Solo se renderizan si hay texto en la barra */}
+      
       {query !== '' && (
         <div className="search-results-container">
           {loading ? (
             <p className="search-status-msg">Searching Springfield Archives...</p>
           ) : !hasResults ? (
             <p className="search-status-msg">
-              No results found for "<strong>{searchQuery}</strong>".
+              No results found for <strong>"{searchQuery}"</strong>.
             </p>
           ) : (
             <>
-              {/* PERSONAJES */}
+              
               {filteredCharacters.length > 0 && (
                 <section className="results-group">
                   <h3 className="group-title">
@@ -141,7 +141,7 @@ function Home() {
                 </section>
               )}
 
-              {/* EPISODIOS */}
+              
               {filteredEpisodes.length > 0 && (
                 <section className="results-group">
                   <h3 className="group-title">
@@ -166,7 +166,7 @@ function Home() {
                 </section>
               )}
 
-              {/* LOCACIONES */}
+              
               {filteredLocations.length > 0 && (
                 <section className="results-group">
                   <h3 className="group-title">

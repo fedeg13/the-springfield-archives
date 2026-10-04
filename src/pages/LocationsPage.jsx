@@ -53,9 +53,9 @@ function LocationsPage() {
           Loading locations database...
         </div>
       ) : filteredLocations.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
-          No locations found matching "{search}".
-        </div>
+        <p className="search-status-msg">
+          No results found for <strong>"{search}"</strong>.
+        </p>
       ) : (
         <div className="cards-grid">
           {filteredLocations.map((loc) => (

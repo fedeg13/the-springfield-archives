@@ -15,8 +15,6 @@ function Form() {
     setSubmitted(true);
     setForm({ name: '', email: '', suggestedCharacter: '', details: '' });
     
-    // Ocultar el mensaje de éxito automáticamente después de 5 segundos
-    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
@@ -32,10 +30,9 @@ function Form() {
       <div className="form-card">
         {submitted && (
           <div className="alert-success">
-            <span className="alert-icon">✨</span>
             <div>
               <strong>Proposal Received!</strong>
-              <p>Thank you. Your suggestion has been logged into the archives system.</p>
+              <p>Your suggestion has been logged into the archives system. Thank you.</p>
             </div>
           </div>
         )}

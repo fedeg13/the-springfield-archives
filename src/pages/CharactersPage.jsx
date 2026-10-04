@@ -53,9 +53,9 @@ function CharactersPage() {
           Loading characters database...
         </div>
       ) : filtered.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
-          No characters found matching "{search}".
-        </div>
+        <p className="search-status-msg">
+          No results found for <strong>"{search}"</strong>.
+        </p>
       ) : (
         <div className="cards-grid">
           {filtered.map((personaje) => (

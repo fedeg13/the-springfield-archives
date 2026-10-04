@@ -10,7 +10,7 @@
 - 🔍 **Real-Time Search:** Filter characters, episodes and locations instantly by name or description.
 - 🖼️️ **High-Quality Imagery:** Seamless integration with The Simpsons API CDN (`cdn.thesimpsonsapi.com/500/`).
 - 📝 **Suggestions:** Interactive form with state management to propose new Springfield data.
-- 🎨 **Modern Design:** Dark and light mthemes with vibrant accents, responsive cards, smooth hover effects, and clean typography.
+- 🎨 **Modern Design:** Dark and light themes with vibrant accents, responsive cards, smooth hover effects, and clean typography.
 - 🧭 **Client-Side Routing:** Powered by React Router DOM with a custom 404 error page.
 
 ---

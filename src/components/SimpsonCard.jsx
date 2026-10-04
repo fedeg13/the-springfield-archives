@@ -6,7 +6,6 @@ function SimpsonCard({ personaje }) {
   const status = personaje.status || personaje.state || 'N/A';
   const gender = personaje.gender || 'N/A';
 
-  // Extraemos la lista completa de frases que devuelve la API
   let phrasesList = [];
   if (Array.isArray(personaje.phrases) && personaje.phrases.length > 0) {
     phrasesList = personaje.phrases.filter((p) => typeof p === 'string' && p.trim() !== '');
@@ -16,7 +15,6 @@ function SimpsonCard({ personaje }) {
     phrasesList = [personaje.quote];
   }
 
-  // Respaldos específicos para personajes si la API no devuelve frases
   const lowerName = name.toLowerCase();
   if (phrasesList.length === 0) {
     if (lowerName.includes('skinner')) {
@@ -26,7 +24,6 @@ function SimpsonCard({ personaje }) {
     }
   }
 
-  // Estado para la frase activa en el carrusel
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   const handlePrev = () => {
@@ -39,7 +36,6 @@ function SimpsonCard({ personaje }) {
 
   const currentPhrase = phrasesList[phraseIndex] || 'N/A';
 
-  // Estilo de estado (Verde para Alive, Rojo para Deceased)
   const lowerStatus = status.toLowerCase();
   let statusClass = 'status-unknown';
   if (lowerStatus.includes('alive') || lowerStatus.includes('vivo')) {
@@ -48,7 +44,6 @@ function SimpsonCard({ personaje }) {
     statusClass = 'status-deceased';
   }
 
-  // Imagen CDN
   const portraitPath = personaje.portrait_path || personaje.image || personaje.avatar || '';
   let imageUrl = '';
   if (portraitPath) {

@@ -1,7 +1,6 @@
 function LocationCard({ location }) {
   const name = location.name || 'N/A';
 
-  // Captura flexible priorizando "use" que es el campo que devuelve la API
   const category = 
     location.use || 
     location.category || 
@@ -14,7 +13,6 @@ function LocationCard({ location }) {
     location.history || 
     'Iconic location in Springfield.';
 
-  // Imagen CDN
   const imagePath = location.image_path || location.image || '';
   let imageUrl = '';
   if (imagePath) {

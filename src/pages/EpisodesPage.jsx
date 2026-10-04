@@ -53,9 +53,9 @@ function EpisodesPage() {
           Loading episodes database...
         </div>
       ) : filteredEpisodes.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
-          No episodes found matching "{search}".
-        </div>
+        <p className="search-status-msg">
+          No results found for <strong>"{search}"</strong>.
+        </p>
       ) : (
         <div className="cards-grid">
           {filteredEpisodes.map((episode) => (

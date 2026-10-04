@@ -1,3 +1,5 @@
+
+
 :root, [data-theme="dark"] {
   --bg-primary: #0a0b0e;
   --bg-secondary: rgba(18, 20, 26, 0.75);
@@ -15,14 +17,13 @@
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* --- MODO CLARO --- */
+
 [data-theme="light"] {
   --bg-primary: #f8fafc;
   --bg-secondary: rgba(226, 232, 240, 0.85);
   --bg-card: rgba(255, 255, 255, 0.88);
   --bg-card-hover: rgba(241, 245, 249, 0.96);
   
-  /* Amarillo Dorado / Mostaza Simpsons (en lugar de naranja) */
   --accent-yellow: #d9a006; 
   --accent-glow: rgba(217, 160, 6, 0.2);
   
@@ -32,7 +33,6 @@
   --border-color: rgba(0, 0, 0, 0.12);
   --border-highlight: rgba(217, 160, 6, 0.4);
 }
-
 
 
 * {
@@ -53,7 +53,7 @@ body {
   overflow-x: hidden;
 }
 
-/* --- IMAGEN DE FONDO DE TODA LA PÁGINA (BLURRED) --- */
+
 body::before {
   content: '';
   position: fixed;
@@ -79,7 +79,7 @@ body::before {
   z-index: 1;
 }
 
-/* --- HEADER / NAVBAR COMPACTA Y FIJA --- */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -172,7 +172,7 @@ body::before {
   transform: scale(1.05);
 }
 
-/* --- PAGE CONTAINER --- */
+
 .page-container {
   padding: 2.5rem 1.5rem;
   flex: 1;
@@ -181,7 +181,7 @@ body::before {
   width: 100%;
 }
 
-/* --- HERO CON CRISTAL ESMERILADO (GLASSMORPHISM) --- */
+
 .hero-header {
   position: relative;
   text-align: center;
@@ -218,15 +218,15 @@ body::before {
 
 .hero-subtitle {
   color: var(--text-secondary);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Logo dentro del Hero */
+
 .hero-logo-img {
-  height: 130px !important;       /* Ajustá la altura real que desees (ej: 80px, 100px, 120px) */
-  max-height: none !important;  /* Elimina cualquier límite previo de altura */
+  height: 120px !important;
+  max-height: none !important;
   width: auto;
   display: inline-block;
   object-fit: contain;
@@ -267,11 +267,11 @@ body::before {
   transform: translateY(-50%);
   color: var(--text-muted);
   font-size: 1.1rem;
-  z-index: 2; /* 👈 Hace que aparezca por encima del fondo del input */
-  pointer-events: none; /* 👈 Permite hacer clic a través del icono hacia el input */
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* --- BÚSQUEDA GLOBAL --- */
+
 .search-results-container {
   margin-top: 2rem;
   display: flex;
@@ -303,17 +303,29 @@ body::before {
 }
 
 .search-status-msg {
+  width: fit-content;
+  max-width: 90%;
+  margin: 1.5rem auto;
   text-align: center;
-  color: var(--text-secondary);
-  font-size: 1.1rem;
-  padding: 2.5rem 1rem;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1.25rem 2rem;
   background: var(--bg-card);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-highlight);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* --- CARDS GRID Y DISPOSICIÓN CENTRADA --- */
+.search-status-msg strong {
+  color: var(--accent-yellow);
+  font-weight: 700;
+}
+
+
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -472,7 +484,7 @@ body::before {
   transform: scale(1.1);
 }
 
-/* BADGES DE ESTADO */
+
 .status-badge {
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
@@ -499,7 +511,7 @@ body::before {
   border: 1px solid var(--border-color);
 }
 
-/* --- FORMULARIO --- */
+
 .form-card {
   max-width: 560px;
   margin: 0 auto;
@@ -582,7 +594,7 @@ body::before {
   margin-bottom: 1.5rem;
 }
 
-/* --- FOOTER --- */
+
 .footer {
   background-color: var(--bg-secondary);
   backdrop-filter: blur(12px);

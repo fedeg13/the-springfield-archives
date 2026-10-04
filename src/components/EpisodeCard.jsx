@@ -3,7 +3,6 @@ function EpisodeCard({ episodio }) {
   const season = episodio.season || 'N/A';
   const episodeNum = episodio.episode_number || episodio.episode || 'N/A';
   
-  // Captura flexible para la fecha de emisión desde la API
   const airDate = 
     episodio.airdate || 
     episodio.air_date || 
@@ -14,7 +13,6 @@ function EpisodeCard({ episodio }) {
 
   const synopsis = episodio.synopsis || episodio.description || 'No synopsis available for this episode.';
 
-  // Imagen CDN
   const imagePath = episodio.image_path || episodio.image || '';
   let imageUrl = '';
   if (imagePath) {
