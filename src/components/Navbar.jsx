@@ -23,7 +23,7 @@ function Navbar({ theme, toggleTheme }) {
           </NavLink>
         </nav>
         <button className="theme-toggle-btn" onClick={toggleTheme} title="Toggle theme">
-          {theme === 'dark' ? '☀️ Light Theme' : '🌙 Dark Theme'}
+          {theme === 'dark' ? '🌙 Dark Theme' : '☀️ Light Theme'}
         </button>
       </div>
     </header>

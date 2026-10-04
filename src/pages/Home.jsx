@@ -69,7 +69,6 @@ function Home() {
     <div className="page-container">
       {/* HERO / BUSCADOR */}
       <div className="hero-header">
-        <span className="hero-badge">General Archive Search</span>
 
         <h2 className="hero-title">
           Welcome to <br />
@@ -176,6 +175,17 @@ function Home() {
                   <div className="cards-grid">
                     {filteredLocations.map((loc) => (
                       <div key={`loc-${loc.id}`} className="character-card">
+                        <div className="card-media">
+                          <img
+                            src={
+                              loc.image_path
+                                ? `https://cdn.thesimpsonsapi.com/500${loc.image_path}`
+                                : 'https://via.placeholder.com/200?text=No+Image'
+                            }
+                            alt={loc.name}
+                            className="character-img"
+                          />
+                        </div>
                         <div className="card-body">
                           <span className="status-badge status-unknown">
                             Location
