@@ -8,7 +8,6 @@ function Home() {
   const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(false);
 
-
   useEffect(() => {
     const fetchAllData = async () => {
       try {
@@ -18,7 +17,6 @@ function Home() {
           fetch('https://thesimpsonsapi.com/api/episodes'),
           fetch('https://thesimpsonsapi.com/api/locations')
         ]);
-
         const dataChars = await resChars.json();
         const dataEps = await resEps.json();
         const dataLocs = await resLocs.json();
@@ -38,25 +36,27 @@ function Home() {
 
   const query = searchQuery.trim().toLowerCase();
 
-
   const filteredCharacters = query
-    ? characters.filter((c) =>
-        c.name?.toLowerCase().includes(query) ||
-        c.occupation?.toLowerCase().includes(query)
+    ? characters.filter(
+        (c) =>
+          c.name?.toLowerCase().includes(query) ||
+          c.occupation?.toLowerCase().includes(query)
       )
     : [];
 
   const filteredEpisodes = query
-    ? episodes.filter((e) =>
-        (e.title || e.name)?.toLowerCase().includes(query) ||
-        e.synopsis?.toLowerCase().includes(query)
+    ? episodes.filter(
+        (e) =>
+          (e.title || e.name)?.toLowerCase().includes(query) ||
+          e.synopsis?.toLowerCase().includes(query)
       )
     : [];
 
   const filteredLocations = query
-    ? locations.filter((l) =>
-        l.name?.toLowerCase().includes(query) ||
-        l.use?.toLowerCase().includes(query)
+    ? locations.filter(
+        (l) =>
+          l.name?.toLowerCase().includes(query) ||
+          l.use?.toLowerCase().includes(query)
       )
     : [];
 
@@ -67,9 +67,7 @@ function Home() {
 
   return (
     <div className="page-container">
-      
       <div className="hero-header">
-
         <h2 className="hero-title">
           Welcome to <br />
           <img
@@ -78,7 +76,6 @@ function Home() {
             className="hero-logo-img"
           />
         </h2>
-
         <p className="hero-subtitle">
           Search across characters, episodes, and locations in The Simpsons universe.
         </p>
@@ -95,7 +92,6 @@ function Home() {
         </div>
       </div>
 
-      
       {query !== '' && (
         <div className="search-results-container">
           {loading ? (
@@ -106,7 +102,6 @@ function Home() {
             </p>
           ) : (
             <>
-              
               {filteredCharacters.length > 0 && (
                 <section className="results-group">
                   <h3 className="group-title">
@@ -141,32 +136,47 @@ function Home() {
                 </section>
               )}
 
-              
               {filteredEpisodes.length > 0 && (
                 <section className="results-group">
                   <h3 className="group-title">
                     📺 Episodes ({filteredEpisodes.length})
                   </h3>
                   <div className="cards-grid">
-                    {filteredEpisodes.map((ep) => (
-                      <div key={`ep-${ep.id}`} className="character-card">
-                        <div className="card-body">
-                          <span className="status-badge status-alive">
-                            Season {ep.season || 'N/A'} • Episode {ep.episode_number || 'N/A'}
-                          </span>
-                          <h4 className="character-name">{ep.title || ep.name}</h4>
-                          <div className="info-item-centered">
-                            <span className="info-label">Air Date</span>
-                            <span className="info-value">{ep.air_date || 'N/A'}</span>
+                    {filteredEpisodes.map((ep) => {
+                      const imagePath = ep.image_path || ep.image || '';
+                      const imageUrl = imagePath
+                        ? imagePath.startsWith('http')
+                          ? imagePath
+                          : `https://cdn.thesimpsonsapi.com/500${imagePath.startsWith('/') ? '' : '/'}${imagePath}`
+                        : 'https://via.placeholder.com/200?text=No+Image';
+
+                      return (
+                        <div key={`ep-${ep.id}`} className="character-card">
+                          <div className="card-media">
+                            <img
+                              src={imageUrl}
+                              alt={ep.title || ep.name}
+                              className="character-img"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div className="card-body">
+                            <span className="status-badge status-alive">
+                              Season {ep.season || 'N/A'} • Episode {ep.episode_number || 'N/A'}
+                            </span>
+                            <h4 className="character-name">{ep.title || ep.name}</h4>
+                            <div className="info-item-centered">
+                              <span className="info-label">Air Date</span>
+                              <span className="info-value">{ep.air_date || 'N/A'}</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </section>
               )}
 
-              
               {filteredLocations.length > 0 && (
                 <section className="results-group">
                   <h3 className="group-title">
@@ -192,7 +202,7 @@ function Home() {
                           </span>
                           <h4 className="character-name">{loc.name}</h4>
                           <div className="info-item-centered">
-                            <span className="info-label">Use / Type</span>
+                            <span className="info-label">Use</span>
                             <span className="info-value">{loc.use || 'N/A'}</span>
                           </div>
                         </div>

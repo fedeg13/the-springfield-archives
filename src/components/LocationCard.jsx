@@ -32,7 +32,7 @@ function LocationCard({ location }) {
 
         <div className="info-list">
           <div className="phrase-box">
-            <span className="info-label">About</span>
+            <span className="info-label">Use</span>
             <p className="phrase-text">{locationUse}</p>
           </div>
         </div>
