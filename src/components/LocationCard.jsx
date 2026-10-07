@@ -1,17 +1,6 @@
 function LocationCard({ location }) {
   const name = location.name || 'N/A';
-
-  const category = 
-    location.use || 
-    location.category || 
-    location.type || 
-    location.town || 
-    'Landmark';
-
-  const description = 
-    location.description || 
-    location.history || 
-    'Iconic location in Springfield.';
+  const locationUse = location.use || 'N/A';
 
   const imagePath = location.image_path || location.image || '';
   let imageUrl = '';
@@ -39,13 +28,12 @@ function LocationCard({ location }) {
       <div className="card-body">
         <div className="character-header">
           <h3 className="character-name">{name}</h3>
-          <span className="status-badge status-alive">{category}</span>
         </div>
 
         <div className="info-list">
           <div className="phrase-box">
             <span className="info-label">About</span>
-            <p className="phrase-text">{description}</p>
+            <p className="phrase-text">{locationUse}</p>
           </div>
         </div>
       </div>
